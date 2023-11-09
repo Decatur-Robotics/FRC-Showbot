@@ -93,8 +93,8 @@ public class RobotContainer {
         primaryAButton = new JoystickButton(primaryJoystick, LogitechControllerButtons.a);
         primaryBButton = new JoystickButton(primaryJoystick, LogitechControllerButtons.b);
 
-        primaryTriggerRight.whileTrue(new ShootCommand(safetyButton, shooter))
-            .whileTrue(new AgitateCommand(agitator));
+        primaryTriggerRight.whileTrue(new ShootCommand(safetyButton, shooter));
+            //.whileTrue(new AgitateCommand(agitator));
 
         primaryTriggerLeft.onTrue(new ShootModeCommand(()->fastSpeedEntry.getDouble(shooterFastSpeed), shooter))
             .onFalse(new ShootModeCommand(()->slowSpeedEntry.getDouble(shooterSlowSpeed), shooter));
